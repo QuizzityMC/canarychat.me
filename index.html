@@ -19,6 +19,7 @@
         }
         .container {
             text-align: center;
+            z-index: 10; /* Ensures content is on top */
         }
         .container img {
             width: 200px;
@@ -54,32 +55,4 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
-            animation: neonPulse 3s infinite;
-            opacity: 0.2;
-        }
-        @keyframes neonPulse {
-            0% {
-                transform: translateY(-100%);
-            }
-            50% {
-                transform: translateY(0%);
-            }
-            100% {
-                transform: translateY(100%);
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="neon-lines"></div>
-    <div class="container">
-        <img src="logo.png" alt="Canary Chat Logo">
-        <h1>Canary Chat</h1>
-        <div class="buttons">
-            <a href="https://app.canarychat.me/register" class="button">Get Started</a>
-            <a href="https://github.com/ADSChat/" class="button github-button">Github</a>
-        </div>
-    </div>
-</body>
-</html>
+            background: linear-gradient(90deg, rgba(255, 0, 0,

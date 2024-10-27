@@ -22,6 +22,10 @@
         .container {
             text-align: center;
             z-index: 10; /* Ensures content is on top */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh; /* Full height for centering */
         }
         .container img {
             width: 200px;
@@ -33,6 +37,9 @@
         }
         .buttons {
             margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
         .button {
             background-color: #FFDF00;
@@ -48,7 +55,7 @@
             border-radius: 10px;
         }
         .login-button {
-            background-color: #FFDF00;
+            background-color: #FFF;
             border: none;
             color: black;
             padding: 15px 30px;
@@ -145,8 +152,8 @@
         <img src="logo.png" alt="Canary Chat Logo">
         <h1>Canary Chat</h1>
         <div class="buttons">
-            <a href="https://app.canarychat.me/login.html" class="button login-button">Login</a>
             <a href="https://app.canarychat.me/register.html" class="button">Get Started</a>
+            <a href="https://app.canarychat.me/login.html" class="button login-button">Login</a>
         </div>
     </div>
     <div class="scroll-down">

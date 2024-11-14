@@ -1,189 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canary Chat</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center; /* Centering content vertically */
-            min-height: 100vh;
-            background-color: black;
-            overflow-x: hidden;
-            font-family: Arial, sans-serif;
-            color: white;
-        }
-        .container {
-            text-align: center;
-            z-index: 10; /* Ensures content is on top */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center; /* Centering content horizontally */
-            height: 100vh; /* Full height for centering */
-        }
-        .container img {
-            width: 200px;
-            margin-bottom: 20px;
-        }
-        .container h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-        .buttons {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        .button {
-            background-color: #FFDF00;
-            border: none;
-            color: black;
-            padding: 15px 30px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px 5px;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        .login-button {
-            background-color: #FFF;
-            border: none;
-            color: black;
-            padding: 15px 30px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px 5px;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        .neon-lines {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 1) 25%, rgba(0, 255, 0, 1) 50%, rgba(0, 0, 255, 1) 75%, rgba(255, 0, 0, 0) 100%);
-            animation: neonPulse 3s infinite;
-            opacity: 0.2;
-            filter: blur(8px);
-        }
-        @keyframes neonPulse {
-            0% {
-                transform: translateY(-100%);
-            }
-            50% {
-                transform: translateY(0%);
-            }
-            100% {
-                transform: translateY(100%);
-            }
-        }
-        .changelog {
-            width: 60%;
-            margin-top: 20px; /* Reduced from 100vh to 20px */
-            padding: 50px;
-            background-color: rgba(50, 50, 50, 0.9);
-            border-radius: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            color: white;
-            text-align: center;
-            margin-bottom: 50px; /* Keeps the space at the bottom */
-        }
-        .changelog h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        .changelog ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .changelog li {
-            margin: 10px 0;
-            background-color: #333;
-            padding: 15px;
-            border-radius: 10px;
-        }
-        .scroll-down {
-            text-align: center;
-            width: 100%;
-        }
-        .scroll-down p {
-            margin: 5px;
-        }
-        .scroll-down .arrow {
-            font-size: 32px; /* Bigger size for the arrow */
-            animation: bounce 2s infinite;
-        }
-        .icons {
-            margin-top: 20px;
-        }
-        .icons img {
-            width: 50px;
-            height: 50px;
-            margin: 0 15px;
-            cursor: pointer;
-        }
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-    </style>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body{
+	background-color:#090914;
+    font-family: Lato;
+    color: #ffffff;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top {
+	display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 90%;
+    background-color: #10101f;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.top h1{display:block;}
+p{margin:0;}
+
+
+button{
+	background-color: #090914;
+    color: #ffffff;
+    font-family: Lato;
+    padding:15px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    margin:5px;
+    font-weight: bold;
+}
+
+button:hover{cursor:pointer;}
+
+button a{color:inherit; text-decoration:none;}
+
+
+.features{
+	flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    background-color: #10101f;
+    padding:15px;
+    border-radius: 20px;
+}
+
+.features img{
+	height: 50px;
+}
+
+</style>
 </head>
 <body>
-    <div class="neon-lines"></div>
-    <div class="container">
-        <img src="logo.png" alt="Canary Chat Logo">
-        <h1>Canary Chat</h1>
-        <div class="buttons">
-            <a href="https://app.canarychat.me/register.html" class="button">Get Started</a>
-            <a href="https://app.canarychat.me/login.html" class="button login-button">Login</a>
-        </div>
-    </div>
-    <div class="scroll-down">
-        <p>Scroll down</p>
-        <div class="arrow">↓</div>
-    </div>
-    <div class="changelog" id="changelog">
-        <h2>Changelog</h2>
-        <ul id="commit-list">
-            <!-- Commit messages will be inserted here by JavaScript -->
-        </ul>
-        <div class="icons">
-            <a href="https://github.com/ADSChat/canarychat.me/"><img src="githublogo.png" alt="GitHub"></a>
-            <a href="https://discord.com/channels/@me"><img src="discordlogo.png" alt="Discord"></a>
-            <a href="https://wwf.panda.org/discover/knowledge_hub/endangered_species/giant_panda/"><img src="newpanda.png" alt="Panda"></a>
-        </div>
-    </div>
-    <script>
-        async function fetchCommits() {
-            const response = await fetch('https://api.github.com/repos/ADSChat/ClientADS/commits');
-            const commits = await response.json();
-            const commitList = document.getElementById('commit-list');
 
-            commits.slice(0, 10).forEach(commit => { // Display the latest 10 commits
-                const listItem = document.createElement('li');
-                listItem.textContent = commit.commit.message;
-                commitList.appendChild(listItem);
-            });
-        }
+<span class="top">
 
-        fetchCommits();
-    </script>
+	<span style="margin-right:120px; display: inline-flex; align-items: center; flex-direction: column;">
+    	<span style="display: inline-flex; align-items: center;">
+   			<img src="https://files.catbox.moe/07r9ou.png" height="50px;" />
+			<h1 style="font-size:50px; margin-left: 10px;">Canary Chat</h1>
+        </span>
+        
+        <span style="display: inline-flex;">
+        	<a href="register.html"><button><p>Sign Up</p></button></a>
+        	<a href="login.html"><button><p>Log In</p></button></a>
+        </span>
+        
+    </span>
+    
+    <img src="https://files.catbox.moe/26f70d.png" style="max-height: 350px; border-radius:10px; border:3px solid #090914;" />
+</span>
+
+
+<span style="display:flex; justify-content:space-between; width: 95%; margin: 0 auto;">
+
+<span class="features">
+	<img src="https://files.catbox.moe/2zhbnn.png" />
+    <h1>Customize Your Profile</h1>
+    <p>With Canary Chat, you are given the option to stylize your profile to your liking. For no cost, you can; add a profile picture, add a banner picture, write a bio, add your pronouns, and choose a color for your profile!</p>
+</span>
+
+<span class="features">
+	<img src="https://files.catbox.moe/a9078n.png" />
+    <h1>Find a Community</h1>
+    <p>Canary Chat is a great place to have a community! Canary Chat servers allow you to make channels for different topics, make roles with their own unique colors and permissions, and utilize bots!</p>
+</span>
+
+<span class="features">
+	<img src="https://files.catbox.moe/ocy1i4.png" />
+    <h1>Make Friends</h1>
+    <p>Canary Chat is full of friendly people! Canary Chat moderation makes ensures bad apples aren't allowed on the platform. If you make a friend, you can use our direct messaging feature to talk to them privately!</p>
+</span>
+
+</span>
+
 </body>
 </html>
